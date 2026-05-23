@@ -1,7 +1,8 @@
-# claudesdk-test
+# claudesdk-skill
 
 探索 Claude Agent SDK 能力的实验项目。通过 Skill 系统让 AI 理解 SDK 文档，进而自主构建了一个 TikHub 社交媒体数据对话助手。
 
+本项目是利用 .claude/skills/claude-agent-sdk 建立 claude-agent-sdk 项目， 项目基于 https://github.com/liangdabiao/tikhub_api_skill  tikhub skill 封装成 webapp。 
 ---
 
 ## 项目背景
@@ -86,7 +87,7 @@ AI 不是机械地调用预定义接口，而是像一个真实的开发者一�
 ## 项目结构
 
 ```
-claudesdk-test/
+claudesdk-skill/
 ├── .claude/skills/
 │   └── claude-agent-sdk/         # SDK 知识源（让 AI 理解 SDK）
 │       ├── SKILL.md
