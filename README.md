@@ -12,11 +12,13 @@
 在claude code/ codex 中： 
 
 ❯ 复制本项目的 skill: ` .claude/skills/claude-agent-sdk` 到你的新建文件夹。
+
 ❯ ask AI:::利用 claude-agent-sdk 建立一个 能够chat对话的 webapp, 而对接的功能参考skill： tikhub-api-helper/
   ,请你先深度研究出一个技术方案，写在文档给我检查.
 
 ### 最后进行端对端测试：  
 （注意：要有充分的调试log，让AI能够得到反馈信息）
+
 ❯ ask AI:::你需要检查，端对端测试，检查调试log，流程和功能是否完成和正常，agent探索的路径是否正常，探索的文件应该是 skill内部的文件，例如里面的api文档等等
 
 
@@ -28,6 +30,22 @@
 - 理解： 给了全面的文档和案例代码 ，在我开发的 skill: claude-agent-sdk skill
 - 约束： 提示语要求 claude-agent-sdk， 和python或者typescript
 - 验证： 要求ai端对端进行测试，充分利用了playwright 和 调试log，自己测试自己发现问题自己想办法解决。
+
+### 使用步骤：
+
+1， 把你的skills 放在根目录
+
+2， 把我的 sdk skill 放进你的codex/claude code
+
+3， 命令ai ： 利用 claude-agent-sdk 建立一个 能够chat对话的 webapp,
+而对接和利用的skills功能参考： 你的skills/
+,请你先深度研究出一个技术方案，技术方案要以skills技术为核心。写在文档给我检查
+
+4， ❯ 检查了，很好，就是这样。 而 .env我也给你了，请你一步一步认真完成工作
+
+5, 端到端测试， 注意检查agent有没有利用好 skill技术
+
+6， 自己测试一下，那么就完成了！ [任何skill转为对外开放agent]
 
 ## 项目背景
 
