@@ -2,8 +2,32 @@
 
 探索 Claude Agent SDK 能力的实验项目。通过 Skill 系统让 AI 理解 SDK 文档，进而自主构建了一个 TikHub 社交媒体数据对话助手。
 
-本项目是利用 .claude/skills/claude-agent-sdk 建立 claude-agent-sdk 项目， 项目基于 https://github.com/liangdabiao/tikhub_api_skill  tikhub skill 封装成 webapp。 
+本项目展示了利用skill: ` .claude/skills/claude-agent-sdk` 建立新的 claude-agent-sdk 项目`tikhub-chat`， `tikhub-chat`项目是基于 https://github.com/liangdabiao/tikhub_api_skill  tikhub skill 封装成 webapp 社交媒体数据对话助手。
+
 ---
+
+
+## 解决问题：怎样利用skill 一键建立 skill 转 webapp ?
+
+在claude code/ codex 中： 
+
+❯ 复制本项目的 skill: ` .claude/skills/claude-agent-sdk` 到你的新建文件夹。
+❯ ask AI:::利用 claude-agent-sdk 建立一个 能够chat对话的 webapp, 而对接的功能参考skill： tikhub-api-helper/
+  ,请你先深度研究出一个技术方案，写在文档给我检查.
+
+### 最后进行端对端测试：  
+（注意：要有充分的调试log，让AI能够得到反馈信息）
+❯ ask AI:::你需要检查，端对端测试，检查调试log，流程和功能是否完成和正常，agent探索的路径是否正常，探索的文件应该是 skill内部的文件，例如里面的api文档等等
+
+
+![](./图片1.png)
+![](./图片2.png)
+
+### harness 原则：
+
+- 理解： 给了全面的文档和案例代码 ，在我开发的 skill: claude-agent-sdk skill
+- 约束： 提示语要求 claude-agent-sdk， 和python或者typescript
+- 验证： 要求ai端对端进行测试，充分利用了playwright 和 调试log，自己测试自己发现问题自己想办法解决。
 
 ## 项目背景
 
