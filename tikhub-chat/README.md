@@ -211,3 +211,10 @@ npm run start        # 生产模式运行
 | 后端 | Express + ws (WebSocket) |
 | AI | Claude Agent SDK (`@anthropic-ai/claude-agent-sdk`) |
 | Skill | tikhub-api-helper (Python, 零依赖) |
+
+
+
+## 感谢和参考
+https://linux.do/  感谢佬友，
+
+https://github.com/liangdabiao/claudesdk-skill  AI生成claude-agent-sdk 项目
