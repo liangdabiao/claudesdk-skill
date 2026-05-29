@@ -141,6 +141,16 @@ wss.on("connection", (ws: ClientWS) => {
   });
 });
 
+
+// Cleanup empty sessions every 5 minutes
+setInterval(() => {
+  for (const [id, session] of sessions) {
+    if (session.subscribers.size === 0 && !session.listening) {
+      session.agent.close();
+      sessions.delete(id);
+    }
+  }
+}, 5 * 60 * 1000);
 setInterval(() => {
   wss.clients.forEach((ws) => {
     const c = ws as ClientWS;

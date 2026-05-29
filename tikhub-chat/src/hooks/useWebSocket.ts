@@ -1,6 +1,15 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { ChatMessage, WSMessage } from "../types";
 
+function getChatId(): string {
+  let id = sessionStorage.getItem("tikhub_chat_id");
+  if (!id) {
+    id = uuid();
+    sessionStorage.setItem("tikhub_chat_id", id);
+  }
+  return id;
+}
+
 const WS_URL = `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}/ws`;
 
 export function useWebSocket() {
@@ -24,7 +33,7 @@ export function useWebSocket() {
     ws.onopen = () => {
       if (!mountedRef.current) { ws.close(); return; }
       setIsConnected(true);
-      ws.send(JSON.stringify({ type: "subscribe", chatId: "default" }));
+      ws.send(JSON.stringify({ type: "subscribe", chatId: getChatId() }));
     };
 
     ws.onclose = () => {
@@ -134,7 +143,7 @@ export function useWebSocket() {
 
     setIsThinking(true);
     wsRef.current.send(
-      JSON.stringify({ type: "chat", chatId: "default", content })
+      JSON.stringify({ type: "chat", chatId: getChatId(), content })
     );
   }, []);
 
